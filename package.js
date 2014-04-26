@@ -17,7 +17,8 @@ Package.on_use(function (api, where) {
   // for backward compat before Meteor linker changes
   if (typeof api.export !== 'undefined') {
     api.use('webapp', 'server');
-    api.use('ui', 'client', {weak: true}); //For helpers
+    // Disabled to not cause errors on Meteor < 0.8
+    //api.use('ui', 'client', {weak: true}); //For helpers
     api.use('HTML5-History-API', 'client', {weak: true});
   }
   
